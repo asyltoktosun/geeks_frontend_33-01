@@ -77,10 +77,10 @@ moveChildblock()
 
 // 2 homework part 2
 
-const seconds_input=document.querySelector('#seconds');
-const start=document.querySelector('#start');
-const stop=document.querySelector('#stop');
-const reset=document.querySelector('#reset');
+const seconds_input=document.querySelector('#seconds'),
+    start=document.querySelector('#start'),
+    stop=document.querySelector('#stop'),
+    reset=document.querySelector('#reset')
 
 let seconds=0
 let IntervalId;

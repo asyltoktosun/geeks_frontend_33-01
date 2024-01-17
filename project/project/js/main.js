@@ -52,7 +52,7 @@ showSlide(index)
 
 
 const autoSlider = (i = 0) => {
-    setInterval(() => {
+    setTimeout(() => {
         i++
         if (i > slides.length - 1) {
             i = 0
