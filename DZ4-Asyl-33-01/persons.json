@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Marilla",
+        "age":59,
+        "photo":"https://i.pinimg.com/564x/27/51/fd/2751fd7da7a5ca4162f0dc49f3baaf77.jpg"
+    },
+    {
+        "name":"Matthew",
+        "age":51,
+        "photo":"https://i.pinimg.com/564x/96/35/0c/96350c604bfc3045c937df616b508d24.jpg"
+    },
+    {
+        "name":"Anne",
+        "age":16,
+        "photo": "https://i.pinimg.com/564x/33/a7/22/33a722a650a926ee0e069b04152d4b5d.jpg"
+    },
+    {
+        "name":"Gilbert",
+        "age":17,
+        "photo":"https://i.pinimg.com/564x/98/86/89/988689b958e50e643f7985d41178f89d.jpg"
+    },
+    {
+        "name":"Diana",
+        "age":16,
+        "photo":"https://i.pinimg.com/564x/70/fb/d5/70fbd5b4029a34ee2a59a2baab61e2bf.jpg"
+    },
+    {
+        "name":"Cole",
+        "age":17,
+        "photo":"https://i.pinimg.com/564x/69/4b/39/694b390bb9d251181eecccb863bdee30.jpg"
+    }
+]
