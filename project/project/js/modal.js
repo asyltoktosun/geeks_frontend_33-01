@@ -26,7 +26,6 @@ modal.onclick=(event)=>{
     
 }
 
-
 document.addEventListener('DOMContentLoaded',()=>{
     window.addEventListener('scroll', checkScroll);
 

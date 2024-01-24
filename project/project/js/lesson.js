@@ -77,3 +77,70 @@ tabContentItems.onclick = () => {
 }
 
 autoSlider(currentIndex)
+
+
+
+//convertor
+
+const somInput=document.querySelector('#som')
+const usdInput=document.querySelector('#usd')
+const eurInput=document.querySelector('#eur')
+
+// somInput.addEventListener('input',()=>{
+//     const request=new XMLHttpRequest
+//     request.open('GET', '../data/convertor.json')
+//     request.setRequestHeader('Content-type','application/json')
+//     request.send()
+
+//     request.addEventListener('load',()=>{
+//         const data=JSON.parse(request.response)
+//         usdInput.value=(somInput.value/data.usd).toFixed(2)
+//     })
+// })
+
+
+//DRY-don'd repeat yourself
+//KISS-keep it simple, stupid
+//SOLID
+
+
+const convertor=(element, targetElement, targetElement2, currentElement)=>{
+    element.oninput=()=>{
+        const request=new XMLHttpRequest
+        request.open('GET', '../data/convertor.json')
+        request.setRequestHeader('Content-type','application/json')
+        request.send()
+
+        request.onload=()=>{
+            const data= JSON.parse(request.response)
+            
+            switch(currentElement){
+                case'som':
+                    targetElement.value=(element.value/data.usd).toFixed(2)
+                    targetElement2.value=(element.value/data.eur).toFixed(2)
+                    break
+                case 'usd':
+                    targetElement.value=(element.value*data.usd).toFixed(2)
+                    targetElement2.value=(element.value/data.eur2usd).toFixed(2)
+                    break
+                case 'eur':
+                    targetElement.value=(element.value*data.eur).toFixed(2)
+                    targetElement2.value=(element.value*data.eur2usd).toFixed(2)
+
+                default:
+                    break
+            }
+
+            if(element.value=== ''){
+                targetElement.value=''
+                targetElement2.value=''
+            } 
+
+        }
+
+    } 
+}
+
+convertor(somInput, usdInput, eurInput,'som')
+convertor(usdInput, somInput, eurInput,'usd')
+convertor(eurInput, somInput, usdInput,'eur')
