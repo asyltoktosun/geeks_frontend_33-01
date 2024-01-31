@@ -77,4 +77,43 @@ prev.onclick = () => {
 autoSlider(index)
 
 
+//OPTIONAL CHAINING-?.
+ const object={}
 
+ console.log(object.address?.street);
+
+//async await, try catch
+
+const URL='https://jsonplaceholder.typicode.com/posts/1'
+
+const asyncfetchData=async()=>{
+   const response= await fetch(URL)
+   const data=await response.json()
+   console.log(data)
+}
+
+asyncfetchData()
+
+
+
+
+//MY CODE
+
+document.addEventListener('DOMContentLoaded', function () {
+    const htmlBody = document.querySelector('body');
+
+    const clickFunction = () => {
+        const colors = [
+            'red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink',
+            'brown', 'teal', 'cyan', 'magenta', 'lime', 'indigo', 'violet',
+            'maroon', 'navy', 'olive', 'gray', 'black', 'white'
+        ];
+
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        const randomColor = colors[randomIndex];
+
+        htmlBody.style.backgroundColor = randomColor;
+    };
+
+    htmlBody.onclick = clickFunction;
+});

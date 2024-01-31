@@ -45,3 +45,62 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 
+//post data
+
+const form=document.querySelector('form')
+
+const postData=async(url,data)=>{
+    return fetch(url,{
+        method:'POST',
+        headers:{'Content-type': 'application/json' },
+        body: data
+    })
+}
+
+const bindPostData=()=>{
+    form.onsubmit=(event)=>{
+        event.preventDefaultI()
+        const formData=new formData(form)
+        const user={}
+        formData.forEach((item, index)=>user[index]=item)
+        const jsonUser=JSON.stringify(user)
+        postData('server.php', jsonUser)
+
+        closeModal()
+    }
+}
+
+// const postData=(formElement)=>{
+//     formElement.addEventListener('submit',(event)=>{
+//         event.preventDefault()
+
+//         const xhr=new XMLHttpRequest()
+//         xhr.open('POST','server.php')
+//         xhr.setRequestHeader('Content-type','application/json')
+
+//         const formData=new FormData(formElement)
+//         const obj={}
+//         formData.forEach((item, index)=>{
+//             obj[index]=item
+//         })
+//         const json=JSON.stringify(obj)
+
+//         xhr.onload = function () {
+//             if (xhr.status === 200) {
+//                 // Обработка успешного ответа от сервера
+//                 console.log(xhr.responseText);
+//             } else {
+//                 // Обработка ошибок
+//                 console.error('Ошибка при отправке данных на сервер');
+//             }
+//         };
+
+//         xhr.send(json)
+//         closeModal()
+//     })
+
+// }
+
+// postData(form) 
+
+
